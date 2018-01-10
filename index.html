@@ -1,47 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
+
+<header>
+    
+    <ul id="slideShow">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <ul id="circle">
+        <li class="select"></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <div class="header-container">
+        <h1>Rui Yoshida PORTFOLIO site</h1>
+        <p>GRAPHIC / DESIGN / WEB </p>
+    </div>
    
    
-    <h1>RUI YOSHIDA PORTFOLIO SITE</h1>
-    
-    <p>GRAPHIC /DESIGN / WEB</p>
-    
-    <h2>PROFILE</h2>
-    
-    <p>吉田 るい</p>
-    
-    <p>新潟県出身。現在は和光大学芸術学科で情報デザインゼミに所属中。<br>
-イラストレーションやフライヤーデザインを製作。<br>
-じわじわとwebコーディングを勉強中。<br>
-次に生まれ変わったらイソギンチャクになると決めている。<br>
-どうぞよろしく。</p>
    
-   
+</header>
+
+    <div class="profile">
+        <h2>PROFILE</h2>
+        <h3>吉田 るい</h3>
+
+            <p>
+                新潟県の真ん中出身。
+                <br>現在は和光大学で情報メディア・デザインゼミに所属。
+                <br>イラスト描いたりDTP。
+                <br>じわじわとwebデザインを勉強中。
+                <br>次に生まれ変わったらイソギンチャクになると決めている。
+                <br>なにとぞよろしく！
+            </p>
+    </div>
+
+<div class="works">
     <h2>WORKS</h2>
-    
     <p>これまでの制作事例を紹介</p>
     
-     <h3>GRAPHIC</h3>
-     
-     <p>アート</p>
-     
-    <h3>DESIGN</h3>
-     
-     <p>ポスターなど</p>
-     
-    <h3>WEB</h3>
-     
-     <p>WEBサイト関連</p>
-     
-     
-    <p>copyright., ruiycd.com</p>
-     
-     
-    
+    <div class="works-container">
+        <div class="graphic">
+        <h3>GRAPHIC</h3>
+            <a href="graphic/graphic.html"><img src="img/01.png" alt="グラフィック"></a>
+        <p>グラフィックアート</p>
+        </div>
+
+        <div class="design">
+        <h3>DESIGN</h3>
+            <a href="design/design.html"><img src="img/02.png" alt="デザイン"></a>
+        <p>ポスターデザイン等</p>
+        </div>
+
+        <div class="web">
+        <h3>WEB</h3>
+            <a href="web/web.html">
+                <img src="img/03.png" alt="Webサイト関連"></a>
+        <p>Webサイト関連</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>copyright. ruiycd.com </p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script>
+    var fadeContent = $('.works').offset().top;
+    var winH = $(window).height();
+    var fadePoint = fadeContent - winH;
+
+    $(window).scroll(function(){
+        // スクロール値
+        var dy = $(this).scrollTop();// Y座標
+
+        if(dy >= fadePoint){
+            $('.graphic').addClass('fade-in-up');
+            $('.design').addClass('fade-in-up');
+            $('.web').addClass('fade-in-up');
+        }
+    });
+    </script>
+
 </body>
 </html>
