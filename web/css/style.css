@@ -1,0 +1,104 @@
+/* Common Style -------------------------- */
+
+body{
+    font-size:14px;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    line-height:1.6;
+    font-weight:normal;
+}
+
+
+a{
+    color:rosybrown;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#DDD;
+    text-decoration: none;
+}
+
+
+/* Header -------------------------- */
+header{
+    width:100%;
+    height:600px;
+    background: url() center/*左右*/ center/*上下*/
+    no-repeat;/*no-repeatは画像が繰り返さないように*/
+    background-size: cover;
+    background-position: -13px;
+    padding-top: 160px;
+    text-align: center;
+}
+
+.header-container{
+    width:100%;
+    height: 140px;
+    background: rgba(255,255,255,0.7); /* RGBとAlphaの指定 */
+    position: absolute;
+    left: 0;
+    top: 190px;
+}
+
+header h1{
+    font-size: 36px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color:darkblue;
+    margin: 20px auto 0px;
+}
+
+
+header p{
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color:darkslateblue;
+    
+}
+
+
+/* headerのスマホ用 -------------------*/
+@media (max-width:767px)/*767px以下ならこのcssを読み込むという条件*/{
+    
+    header{
+        background-position: -10px;
+        position: center;
+    }
+    
+    .header-container{
+        background: rgba(255,255,255,0.8);
+        padding-top: 40px;
+    }
+    
+    header h1{
+        font-size: 30px;
+    }
+    
+    header p{
+        
+        font-size: 18px;
+    }
+
+}
+
+
+
+/* Works -------------------------- */
+
+
+/*works のスマホ用--------------------*/
+
+
+/* Footer -------------------------- */
+footer{
+    padding: 72px 0; /*上下72あける 左右0*/
+}
+
+footer p{
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
