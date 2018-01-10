@@ -1,0 +1,278 @@
+/* Common Style -------------------------- */
+
+body{
+    font-size:14px;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    line-height:1.6;
+    font-weight:normal;
+}
+
+
+a{
+    color:rosybrown;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#DDD;
+    text-decoration: none;
+}
+
+
+/* css animation */
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up{
+    0%{
+        opacity: 0;
+        transform: translate(0,80px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+/* Header -------------------------- */
+header{
+    width:100%;
+    height:600px;
+    text-align: center;
+    opacity: 0; /* 透明 */
+    animation-name: fade-in; /* キーフレームの指定 */
+    animation-duration: 0.5s; /* フレームの時間 */
+    animation-iteration-count: 1; /* 繰り返しの回数 */
+    animation-direction: normal;  /* 再生方向 */
+    animation-fill-mode: forwards; /* 停止場所 */
+    animation-timing-function: ease-out; /* イージング */
+    animation-delay: 2s; /* 待機時間 */
+    position: relative;
+}
+
+#circle {
+    width: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    bottom: 20px;
+}
+
+#circle li{
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    background-color: #CCC;
+    border-radius: 5px;
+    
+}
+
+#circle .select{
+    background-color: #666;
+    
+}
+
+#slideShow{
+    width:100%;
+    height:600px;
+}
+
+#slideShow li:nth-child(1){
+    background:url(../img/main.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+#slideShow li:nth-child(2){
+    background:url(../img/main2.jpg) center center no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 600px;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+#slideShow li:nth-child(3){
+    background:url(../img/main3.jpg) no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 600px;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+.header-container{
+    width:100%;
+    height: 140px;
+    background: rgba(255,255,255,0.7); /* RGBとAlphaの指定 */
+    position: absolute;
+    left: 0;
+    top: 190px;
+}
+
+header h1{
+    font-size: 36px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color:darkblue;
+    margin: 20px auto 0px;
+}
+
+
+header p{
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color:darkslateblue;
+    
+}
+
+/* Profile -------------------------- */
+.profile{
+    width:100%;
+    padding: 72px 0; /* 上下72 左右0 */
+    text-align: center;
+}
+.profile h2{
+    font-size: 36px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color:darkslateblue;
+    margin-bottom: 30px;
+}
+.profile h3{
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+.profile p{
+    font-size: 14px;
+    line-height: 2;
+}
+
+/*profile スマホ用 ---------------- */
+@media (max-width:767px){
+    
+    .profile{
+        padding: 72px 16px;
+        box-sizing: border-box;
+        /* paddingをwidthの中に含む */
+    }
+    
+}
+
+
+/* Works -------------------------- */
+.works{
+    background-color: #F4F4F4;
+    padding: 72px 0;
+    text-align: center;
+}
+.works h2{
+    font-size: 36px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: darkslateblue;
+}
+.works p{
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.works h3{
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 24px;
+}
+.works-container{
+    width: 1024px;
+    margin: 0 auto; /* 上下0 左右auto*/
+    display: flex;
+    justify-content: space-between;
+}
+.graphic{
+    width:250px;
+    opacity: 0; /* 透明 */
+    animation-name: fade-in-up; /* キーフレームの指定 */
+    animation-duration: 1s; /* フレームの時間 */
+    animation-iteration-count: 1; /* 繰り返しの回数 */
+    animation-direction: normal;  /* 再生方向 */
+    animation-fill-mode: forwards; /* 停止場所 */
+    animation-timing-function: ease-out; /* イージング */
+    animation-delay: 1s; /* 待機時間 */
+    transform: translate(0,80px); /*xy座標*/
+}
+
+.design{
+    width:250px;
+    opacity: 0; /* 透明 */
+    animation-name: fade-in-up; /* キーフレームの指定 */
+    animation-duration: 1s; /* フレームの時間 */
+    animation-iteration-count: 1; /* 繰り返しの回数 */
+    animation-direction: normal;  /* 再生方向 */
+    animation-fill-mode: forwards; /* 停止場所 */
+    animation-timing-function: ease-out; /* イージング */
+    animation-delay: 1.5s; /* 待機時間 */
+    transform: translate(0,80px); /*xy座標*/
+}
+
+.web{
+    width:250px;
+    opacity: 0; /* 透明 */
+    animation-name: fade-in-up; /* キーフレームの指定 */
+    animation-duration: 1s; /* フレームの時間 */
+    animation-iteration-count: 1; /* 繰り返しの回数 */
+    animation-direction: normal;  /* 再生方向 */
+    animation-fill-mode: forwards; /* 停止場所 */
+    animation-timing-function: ease-out; /* イージング */
+    animation-delay: 2s; /* 待機時間 */
+    transform: translate(0,80px); /*xy座標*/
+}
+
+/*works のスマホ用--------------------*/
+@media (max-width:767px){
+    .works-container{
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+    
+    .graphic{
+        width: 100%;
+    }
+    
+    .design{
+        width: 100%;
+    }
+    
+    .web{
+        width: 100%;
+    }
+    
+}
+
+
+
+/* Footer -------------------------- */
+
+footer{
+    padding: 72px 0;
+}
+footer p{
+    font-size: 12px;
+    text-align: center;
+}
