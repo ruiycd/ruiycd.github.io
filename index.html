@@ -4,103 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>OK-DARUI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
+    
+    <!--Font awesome-->
+   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+   
+   <!--jquery読み込み-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    
+    <!--intense-->
+    <script src="js/intense.min.js"></script>
+    
+    <!--smoothscroll-->
+         <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行
+
+        $('a[href^="#"]').click(function()
+        {
+          // スクロールの速度
+          var speed = 400; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
+    
+      <!-- 固定pagetop -->
+<script>
+$(function(){
+  var topBtn=$('#pagetop');
+  topBtn.hide();
+ 
+  //ボタンの表示設定
+  $(window).scroll(function(){
+    if($(this).scrollTop()>300){
+      //---- 画面を300pxスクロールしたら、ボタンを表示する
+      topBtn.fadeIn();
+    }else{
+      //---- 画面が300pxより上なら、ボタンを表示しない
+      topBtn.fadeOut();
+    } 
+  });
+ 
+  //ボタンをクリックしたら、スクロールして上に戻る
+  topBtn.click(function(){
+    $('body,html').animate({
+    scrollTop: 0},500);
+    return false;
+  });
+});
+</script>
+
+
+        <!--mainv fadein/out-->
+<script>
+    $(function() {
+$('header').css('display', 'none').fadeIn(1500);
+});
+    </script>
     
 </head>
 <body>
 
 <header>
-    
-    <ul id="slideShow">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    
-    <ul id="circle">
-        <li class="select"></li>
-        <li></li>
-        <li></li>
-    </ul>
-    
-    <div class="header-container">
-        <h1>Rui Yoshida PORTFOLIO site</h1>
-        <p>GRAPHIC / DESIGN / WEB </p>
-    </div>
-   
-   
-   
+  
+   <div class="header-container">
+       
+        <h1 class="logo">Rui Yoshida
+        PORTFOLIO site</h1>
+        <p><a href="#design">Design</a> / <a href="#web">Web</a> / <a href="#others">Others</a> </p>
+   </div>
 </header>
+    
+  <!-- 右下pagetop -->
+<div id="pagetop" hidden>
+    <img src="img/pagetop.png" width="120px">
+</div>
 
     <div class="profile">
         <h2>PROFILE</h2>
         <h3>吉田 るい</h3>
 
             <p>
-                新潟県の真ん中出身。
-                <br>現在は和光大学で情報メディア・デザインゼミに所属。
-                <br>イラスト描いたりDTP。
-                <br>じわじわとwebデザインを勉強中。
-                <br>次に生まれ変わったらイソギンチャクになると決めている。
-                <br>なにとぞよろしく！
+                新潟県出身。<br>和光大学芸術学科をもうすぐ卒業。<br>青色、抹茶、齧歯類が好きです！<br>趣味は落書きと中学英語。
             </p>
     </div>
 
 <div class="works">
-    <h2>WORKS</h2>
+    
+    <div class="contents-title">
+    <h2>Works</h2>
     <p>これまでの制作事例を紹介</p>
+    </div>
     
     <div class="works-container">
-        <div class="graphic">
-        <h3>GRAPHIC</h3>
-            <a href="graphic/graphic.html"><img src="img/01.png" alt="グラフィック"></a>
-        <p>グラフィックアート</p>
+        
+
+        <div id="design">
+        <h3><i class="fas fa-edit"></i>DESIGN</h3>
+        <p　class="sub">DTPデザインなど</p>
+        
+        <div class="design-1">
+        <p><img src="img/design/culture.png" alt="大学内発行冊子" width="300px">
+            </p>
+            
+            <p>カルチャースポットを記事にした大学内発行冊子<br>「カルスポ探検へようこそ」表紙・エディトリアルデザイン</p>
+        </div>
+        
+        <div class="design-2">
+            <p>
+                <img src="img/design/kafka-1.png" alt="カフカ「変身」イメージブックカバー" width="300px">
+                
+                <img src="img/design/kafka-2.png" alt="カフカ「変身」イメージポスター" width="200px">
+            </p>
+            
+            <p>フランツ・カフカ「変身」ブックカバーとポスターデザイン<br>
+            </p>
+        </div>
+        
+        <div class="design-3">
+                <p>
+                    <img src="img/design/kamo1.png" alt="かもめ食堂イメージポスター" width="200px">
+                
+                
+                <img src="img/design/kamo2.png" alt="イメージサントラデザイン" width="300px">
+                
+                <img src="img/design/kamo3.jpg" alt="イメージサントラデザイン" width="300px">
+                
+                </p>
+                
+                <p>かもめ食堂をイメージしたポスター・サウンドトラックジャケットデザイン<br>焼き海苔をスキャンして作りました</p>
+        </div>
+        
         </div>
 
-        <div class="design">
-        <h3>DESIGN</h3>
-            <a href="design/design.html"><img src="img/02.png" alt="デザイン"></a>
-        <p>ポスターデザイン等</p>
+       <div id="web">
+        <h3><i class="fas fa-desktop"></i> Web</h3>
+        <p class="sub">Webサイト関連</p>
+        
+          <div class="web-1">
+           <p><img src="img/web/wap.png" alt="wap">
+           <p>4年間所属・運営したパフォーマンスサークルの紹介ページを制作<br>
+           ▶︎http://wapjug.starfree.jp/
+           PC/タブレット/スマートフォン</p>
+           </div>
+        
+        <div class="web-2">
+        <img src="img/web/wakobn.png" alt="和光大学芸術学科コンテンツバナー" width="200px">
+        <p>和光大学芸術学科公式サイト内コンテンツバナーデザイン
+        </p>
         </div>
-
-        <div class="web">
-        <h3>WEB</h3>
-            <a href="web/web.html">
-                <img src="img/03.png" alt="Webサイト関連"></a>
-        <p>Webサイト関連</p>
+        
+        
+        <div class="web-3">
+        <p>
+        サトヤマアートサンポ2017　▶︎http://www.wako.ac.jp/art/satoyama/
+        コーディング担当
+        </p>
+        
+        <p>
+        和光大学卒業制作展「Calor」
+        ▶︎http://www.wako.ac.jp/artex/　
+        コーディング担当
+        </p>
+           </div>
+        
+        
         </div>
+        
+        <div id="others">
+        <h3><i class="fas fa-heart"></i> OTHERS</h3>
+        
+        <p class="sub">趣味のイラスト・アートなど</p>
+        
+        
+        
+        <div class="others-1">
+        <img src="img/others/kihada.png" alt="日本の伝統色" width="300px">
+        <p>グループ制作冊子「植物から作られる 日本の伝統色」ページレイアウトデザイン、イラスト</p>
+        </div>
+        
+        <div class="others-2">
+        <img src="img/others/kaiki.png" alt="怪奇本棚アートポスター" width="300px">
+        <p>大学内図書館企画本棚「怪奇本棚」アートポスター</p>
+        </div>
+        
+        <div class="others-3">
+            <img src="img/others/ice.jpg" alt="ice" width="300px">
+        <p>暑い夏の現実逃避</p>
+        </div>
+        
+        <div class="others-4">
+        <img src="img/others/hamy.png" alt="ハミガキ妖怪" width="300px">
+        <p>ハミガキ妖精・ハミィ</p>
+        </div>
+        
     </div>
 </div>
 
 <footer>
     <p>copyright. ruiycd.com </p>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-<script>
-    var fadeContent = $('.works').offset().top;
-    var winH = $(window).height();
-    var fadePoint = fadeContent - winH;
-
-    $(window).scroll(function(){
-        // スクロール値
-        var dy = $(this).scrollTop();// Y座標
-
-        if(dy >= fadePoint){
-            $('.graphic').addClass('fade-in-up');
-            $('.design').addClass('fade-in-up');
-            $('.web').addClass('fade-in-up');
-        }
-    });
-    </script>
 
 </body>
 </html>
